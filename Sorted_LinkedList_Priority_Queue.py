@@ -1,10 +1,8 @@
 from Node import Node
+from LinkedList import LinkedList
 
 
-class SortedLinkedListPriorityQueue:
-    def __init__(self):
-        self.head = None
-        self.tail = None
+class SortedLinkedListPriorityQueue(LinkedList):
 
     def insert(self, key):
         new_node = Node(key)
