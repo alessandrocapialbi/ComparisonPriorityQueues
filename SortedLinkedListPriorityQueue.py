@@ -5,6 +5,7 @@ from LinkedList import LinkedList
 class SortedLinkedListPriorityQueue(LinkedList):
 
     def insert(self, key):
+        self.size += 1
         new_node = Node(key)
         if not self.head:  # If list is empty
             self.head = new_node

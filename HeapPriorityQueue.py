@@ -12,6 +12,9 @@ class HeapPriorityQueue:
     def right(self, i):
         return 2 * i + 2
 
+    def get_size(self):
+        return self.heap_size
+
     def insert(self, key):
         self.heap_size += 1
         self.heap.append(float('-inf'))

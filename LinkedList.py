@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 
 
-class LinkedList:
+class LinkedList(ABC):
     def __init__(self):
         self.head = None
         self.tail = None
+        self.size = 0
 
     @abstractmethod
     def insert(self, key):
@@ -25,3 +26,6 @@ class LinkedList:
 
     def set_tail(self, tail):
         self.tail = tail
+
+    def get_size(self):
+        return self.size

@@ -5,6 +5,7 @@ from LinkedList import LinkedList
 class LinkedListPriorityQueue(LinkedList):
 
     def insert(self, key):
+        self.size += 1
         node = Node(key)
         if not self.head:  # If list is empty
             self.head = node
@@ -23,4 +24,3 @@ class LinkedListPriorityQueue(LinkedList):
                 max_value = current.key
             current = current.get_next()
         return max_value
-
