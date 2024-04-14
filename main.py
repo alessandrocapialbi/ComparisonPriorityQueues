@@ -1,20 +1,38 @@
 from HeapPriorityQueue import HeapPriorityQueue
-from LinkedListPriorityQueue import LinkedListPriorityQueue
+from UnsortedLinkedListPriorityQueue import UnsortedLinkedListPriorityQueue
 from SortedLinkedListPriorityQueue import SortedLinkedListPriorityQueue
 from PlotGenerator import PlotGenerator
 
-
-
 if __name__ == "__main__":
-
     # Usage
-    plot = PlotGenerator()
+    plt = PlotGenerator()
 
-    num_elements = 10000 # Set desired dimensions
+    n = 10000  # Set desired dimensions
 
     pq_heap = HeapPriorityQueue()
-    pq_unsorted_list = LinkedListPriorityQueue()
+    pq_unsorted_list = UnsortedLinkedListPriorityQueue()
     pq_sorted_list = SortedLinkedListPriorityQueue()
-    times = plot.measure_insertion_time(pq_heap, num_elements)
-    plot.plot_insertion_time(times, num_elements, 'Heap')
 
+    insertion_pq_heap_times = plt.measure_insertion_time(pq_heap, n, True)
+    plt.plot(insertion_pq_heap_times, n, 'Heap Insertion', 'red')
+
+    extraction_pq_heap_times = plt.measure_extraction_time_2(pq_heap, n, True)
+    plt.plot(extraction_pq_heap_times, n, 'Heap Extraction', 'red')
+
+    insertion_pq_unsorted_list_times = plt.measure_insertion_time(pq_unsorted_list, n, True)
+    plt.plot(insertion_pq_unsorted_list_times, n, 'Unsorted List Insertion', 'blue')
+
+    extraction_pq_unsorted_list_times = plt.measure_extraction_time(pq_unsorted_list, n, True)
+    plt.plot(extraction_pq_unsorted_list_times, n, 'Unsorted List Extraction', 'blue')
+
+    insertion_pq_sorted_list_times = plt.measure_insertion_time(pq_sorted_list, n, True)
+    plt.plot(insertion_pq_sorted_list_times, n, 'Sorted List Insertion', 'green')
+
+    extraction_pq_sorted_list_times = plt.measure_extraction_time_3(pq_sorted_list, n)
+    plt.plot(extraction_pq_sorted_list_times, n, 'Sorted List Extraction', 'green')
+
+    plt.compare_plots([
+        (insertion_pq_heap_times, 'Heap Insertion'),
+        (insertion_pq_unsorted_list_times, 'Unsorted List Insertion'),
+        (insertion_pq_sorted_list_times, 'Sorted List Insertion')
+    ], n, 'Insertion Time Comparison', ['red', 'blue', 'green'])

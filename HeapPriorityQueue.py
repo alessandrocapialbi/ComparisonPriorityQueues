@@ -48,6 +48,7 @@ class HeapPriorityQueue:
             raise ValueError("Heap underflow")
         max_val = self.heap[0]
         self.heap[0] = self.heap[-1]
+        self.heap_size -= 1
         del self.heap[-1]
         self.max_heapify(0)
         return max_val
