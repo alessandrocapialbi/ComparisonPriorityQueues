@@ -1,4 +1,5 @@
-Sorted Linked List, Unsorted Linked List and Max-Heap Implementations in Python
+**Sorted Linked List, Unsorted Linked List and Max-Heap Implementations in Python**
+
 This Python project provides flexible and robust implementations of:
 
 Sorted Linked List: Maintains elements in ascending order for efficient access.
@@ -8,7 +9,7 @@ Key Features
 Modularity: Each data structure is implemented in a separate class for easy maintenance and reuse.
 Comprehensive Operations: Supports insertion, search and extraction of the maximum value, iteration, and other operations specific to each data structure.
 
-Clone the Repository:
+**Clone the Repository**:
 
 Bash
 git clone https://github.com/alessandro_capialbi/ComparisonPriorityQueues.git
@@ -46,5 +47,5 @@ max_value = heap.extract_max()
 Use code with caution.
 play_circleeditcontent_copy
 
-License
+**License**
 This project is released under the MIT License.
